@@ -52,10 +52,18 @@ function getComputerMove(move) {
 
 function getWinner(playerMove,computerMove) {
     var winner;
+    var r = 'rock', p = 'paper', s = 'scissors';
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
+     if ((playerMove == s && computerMove == p) || (playerMove == r && computerMove == s) || (playerMove == p && computerMove == r)) {
+        winner = 'player';
+     }else if((computerMove == s && playerMove == p ) || (computerMove == r && playerMove == s ) || (computerMove == p && playerMove == r)){
+        winner = 'computer';
+     }else if ((playerMove === computerMove)){
+        winner = 'tie';
+     }
     return winner;
 }
 
